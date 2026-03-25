@@ -2,8 +2,15 @@ version: 2
 
 models:
   - name: stg_orders
+    description: Order data with basic cleaning and transformation applied.
     columns:
       - name: order_id
+        description: The unique key for each order.
       - name: customer_id
+        description: The unique key for the customer who placed the order.
       - name: order_date
+        description: The date the order was placed.
       - name: store_id
+        description: "{{ doc('store_id_description') }}"
+        tests:
+          -not_null
